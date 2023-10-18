@@ -1,0 +1,71 @@
+<html>
+  <title>Show More</title>
+
+  <body>
+    <div
+      id="time"
+      style="
+        border: 3px solid blue;
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 10px;
+      "
+    >
+      00:00
+    </div>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn" disabled="true">Stop</button>
+    <script>
+      var running = false;
+      var intervalId;
+
+      function stopWatch() {
+        var timeArray = document.getElementById("time").textContent.split(":");
+        var minutes = parseInt(timeArray[0]);
+        var seconds = parseInt(timeArray[1]);
+
+        if (seconds === 59) {
+          minutes++;
+          seconds = 0;
+        } else {
+          seconds++;
+        }
+        //concatenate digits starting with 0 for minutes and seconds
+        if (minutes < 10) {
+          minutesText = "0" + minutes;
+        } else {
+          minutesText = minutes.toString();
+        }
+
+        if (seconds < 10) {
+          secondsText = "0" + seconds;
+        } else {
+          secondsText = seconds.toString();
+        }
+
+        document.getElementById("time").textContent = minutesText + ":" + secondsText;
+      }
+
+      document
+        .getElementById("startBtn")
+        .addEventListener("click", function () {
+          running = true;
+          if (running) {
+            intervalId = setInterval(stopWatch, 1000);
+            document.getElementById("startBtn").disabled = true;
+            document.getElementById("stopBtn").disabled = false;
+          }
+        });
+      //to stop/reset watch
+      document.getElementById("stopBtn").addEventListener("click", function () {
+        clearInterval(intervalId);
+        running = false;
+        minutes = 0;
+        seconds = 0;
+        document.getElementById("time").textContent = "00:00";
+        document.getElementById("startBtn").disabled = false;
+        document.getElementById("stopBtn").disabled = true;
+      });
+    </script>
+  </body>
+</html>

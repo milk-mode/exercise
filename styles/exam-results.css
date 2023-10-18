@@ -1,0 +1,8 @@
+table.border {
+    border-style: double;
+  }
+  table.border th,
+  table.border td {
+    border: 1px solid #000;   
+    text-align: center;
+  }

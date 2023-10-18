@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+
+    <title>Form Validation</title>
+  </head>
+  <body
+    class="container-fluid bg-secondary d-flex align-items-center justify-content-center"
+  >
+    <form action="script.js" method="post" id="form" class="bg-light p-4 m-4">
+      <div class="container">
+        <div>
+          <div class="text-center border-bottom pb-4">
+            <h3 class="mb-0">Register user</h3>
+          </div>
+
+          <div class="form-group row">
+            <label for="firstName" class="col-md-3 col-form-label"
+              >First Name:</label
+            >
+            <div class="col-md-9">
+              <input
+                type="text"
+                class="form-control rounded-pill"
+                id="firstName"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="lastName" class="col-md-3 col-form-label"
+              >Last Name:</label
+            >
+            <div class="col-md-9">
+              <input
+                type="text"
+                class="form-control rounded-pill"
+                id="lastName"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="email" class="col-md-3 col-form-label"
+              >Email address:</label
+            >
+            <div class="col-md-9">
+              <input
+                type="email"
+                class="form-control rounded-pill"
+                id="email"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="password" class="col-md-3 col-form-label"
+              >Password:</label
+            >
+            <div class="col-md-9">
+              <input
+                type="password"
+                class="form-control rounded-pill"
+                id="password"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+              <button
+                class="btn btn-warning btn-block btn-lg rounded-pill"
+                type="submit"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
